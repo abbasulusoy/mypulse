@@ -1,0 +1,59 @@
+.grid-2-column {
+  display: grid;
+  grid-template-columns: 350px auto;
+  grid-template-rows: 350px;
+  column-gap: 10px;
+  margin-bottom: 1rem;
+}
+
+.grid-2-column > img {
+  height: 100%;
+  border-radius: 10px;
+}
+
+.horizontal-alignment {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-between;
+  margin-bottom: 1rem;
+}
+
+.inner-card {
+  margin-top: 0.5em;
+}
+
+#main-content {
+  margin: 6rem;
+}
+
+.outer-card {
+  width: 20%;
+  min-width: 250px;
+  background: #00BFFF;
+  color: white;
+  margin: 0.5rem;
+}
+
+.mat-card-subtitle {
+  color: white;
+}
+
+
+.mat-card {
+  display: flex;
+  flex-direction: column;
+}
+
+.mat-card-header {
+  flex-shrink: 0;
+  padding: 1em;
+}
+
+.mat-card-content {
+  flex-grow: 1;
+  overflow: auto;
+}
+
+.pointer-cursor {
+  cursor: pointer;
+}

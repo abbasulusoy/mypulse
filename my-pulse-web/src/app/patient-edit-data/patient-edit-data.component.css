@@ -1,0 +1,82 @@
+.grid-2-column {
+  display: grid;
+  grid-template-columns: 350px auto;
+  grid-template-rows: 350px;
+  column-gap: 10px;
+  margin-bottom: 1rem;
+}
+
+.grid-2-column > img {
+  height: 100%;
+  border-radius: 10px;
+}
+
+.horizontal-alignment {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-between;
+  margin-bottom: 1rem;
+}
+
+#firstBox {
+  justify-content: flex-start;
+}
+
+#firstBox .grid {
+  display: grid;
+  grid-template-columns: auto auto;
+}
+
+#firstBox .gridItem {
+  padding: 1rem 2rem;
+}
+
+.inner-card {
+  margin-top: 0.5em;
+}
+
+#main-content {
+  margin: 6rem;
+}
+
+.outer-card {
+  width: 20%;
+  min-width: 250px;
+  background: rgba(223, 39, 39, 0.92);
+  color: white;
+  margin: 0.5rem;
+}
+
+#card-emergency-contact {
+  border: 2px dashed red;
+  background: rgba(255, 0, 0, 0.1);
+  height: fit-content;
+}
+
+#card-personal-data {
+  margin:0;
+  background: rgba(184,196,210,1);
+}
+
+.mat-card {
+  display: flex;
+  flex-direction: column;
+}
+
+.mat-card-header {
+  flex-shrink: 0;
+  padding: 1em;
+}
+
+.mat-card-content {
+  flex-grow: 1;
+  overflow: auto;
+}
+
+#personal-data {
+  display: flex;
+  flex-flow: wrap column;
+  justify-content: space-between;
+  padding: 2em;
+}
+

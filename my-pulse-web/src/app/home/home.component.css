@@ -1,0 +1,17 @@
+.radio-group {
+  display: flex;
+  flex-direction: column;
+}
+
+.radio-group mat-radio-button {
+  margin: 10px;
+}
+
+mat-form-field {
+  width: 100%;
+}
+
+.form-field-group {
+  display: flex;
+  flex-flow: column;
+}

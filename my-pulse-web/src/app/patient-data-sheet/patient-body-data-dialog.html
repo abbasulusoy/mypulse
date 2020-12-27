@@ -1,0 +1,19 @@
+<div mat-dialog-content>
+  <mat-form-field>
+    <mat-label>Größe</mat-label>
+    <input matInput [(ngModel)]="data.height">
+  </mat-form-field>
+  <mat-form-field>
+    <mat-label>Gewicht</mat-label>
+    <input matInput [(ngModel)]="data.weight">
+  </mat-form-field>
+  <mat-form-field>
+    <mat-label>Blutgruppe</mat-label>
+    <input matInput [(ngModel)]="data.bloodType">
+  </mat-form-field>
+</div>
+<div mat-dialog-actions>
+  <button mat-button (click)="onNoClick()">Abbrechen</button>
+  <button mat-button [mat-dialog-close]="data" cdkFocusInitial>Ok</button>
+</div>
+

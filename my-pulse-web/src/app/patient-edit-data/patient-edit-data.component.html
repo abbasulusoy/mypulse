@@ -1,0 +1,112 @@
+<app-nav-bar></app-nav-bar>
+<div id="main-content">
+  <div class="horizontal-alignment" id="firstBox">
+    <div>
+      <img style="width: 350px; height: 350px" src="assets/img/default-profile.jpg"
+           alt="Profile Picture of the Patient">
+    </div>
+    <div class="grid">
+      <mat-form-field hintLabel="Max. 20 characters" class="gridItem">
+        <mat-label>Vorname</mat-label>
+        <input matInput maxlength="20" placeholder="Max">
+        <mat-hint align="end">0/20</mat-hint>
+      </mat-form-field>
+
+      <mat-form-field hintLabel="Max. 30 characters" class="gridItem">
+        <mat-label>Nachname</mat-label>
+        <input matInput maxlength="30" placeholder="Mustermann">
+        <mat-hint align="end">0/30</mat-hint>
+      </mat-form-field>
+
+      <mat-form-field class="gridItem">
+        <mat-label>Enter your email</mat-label>
+        <input matInput id="inputEmail" placeholder="pat@example.com" [formControl]="email" required>
+        <mat-error *ngIf="email.invalid">{{getErrorMessage()}}</mat-error>
+      </mat-form-field>
+
+      <mat-form-field color="primary" class="gridItem">
+        <mat-label>Geburtstag</mat-label>
+        <input matInput [matDatepicker]="picker1">
+        <mat-datepicker-toggle matSuffix [for]="picker1"></mat-datepicker-toggle>
+        <mat-datepicker #picker1></mat-datepicker>
+      </mat-form-field>
+
+      <div class="gridItem">
+        <form  [formGroup]="sliderHeightForm">
+          <mat-slider thumbLabel min="1.4" max="2.2" (input)="updateHeight($event)" formControlName="sliderHeight" id='heightSliderID' [(ngModel)]="height" required></mat-slider>
+          <input value="{{height}}" style="width: 30px">
+          <mat-label> kg</mat-label>
+        </form>
+      </div>
+      <div class="gridItem">
+        <form  [formGroup]="sliderWeightForm">
+        <mat-slider thumbLabel min="40" max="160" (input)="updateWeight($event)" formControlName="sliderWeight" id='weightSliderID' [(ngModel)]="weight" required></mat-slider>
+        <input value="{{weight}}" style="width: 30px">
+        <mat-label> kg</mat-label>
+        </form>
+      </div>
+      <mat-form-field class="gridItem">
+        <mat-label>Blutgruppe & Rhesusfaktor</mat-label>
+        <mat-select>
+          <mat-option>Löschen</mat-option>
+          <mat-option value="valid">A+</mat-option>
+          <mat-option value="valid">A-</mat-option>
+          <mat-option value="valid">B+</mat-option>
+          <mat-option value="valid">B-</mat-option>
+          <mat-option value="valid">AB+</mat-option>
+          <mat-option value="valid">AB-</mat-option>
+          <mat-option value="valid">0+</mat-option>
+          <mat-option value="valid">0-</mat-option>
+        </mat-select>
+      </mat-form-field>
+    </div>
+  </div>
+
+
+  <div class="horizontal-alignment">
+    <mat-card class="outer-card">
+      <mat-card-header>
+        <mat-card-title>Krankheiten</mat-card-title>
+      </mat-card-header>
+      <mat-card-content>
+      </mat-card-content>
+      <mat-card-actions>
+        <button mat-button>+ Krankheit hinzufügen</button>
+      </mat-card-actions>
+    </mat-card>
+
+    <mat-card class="outer-card">
+      <mat-card-header>
+        <mat-card-title>Medikamente</mat-card-title>
+      </mat-card-header>
+      <mat-card-content>
+      </mat-card-content>
+      <mat-card-actions>
+        <button mat-button>+ Medikation hinzufügen</button>
+      </mat-card-actions>
+    </mat-card>
+
+    <mat-card class="outer-card">
+      <mat-card-header>
+        <mat-card-title>Allergien</mat-card-title>
+      </mat-card-header>
+      <mat-card-content>
+      </mat-card-content>
+      <mat-card-actions>
+        <button mat-button>+ Allergie hinzufügen</button>
+      </mat-card-actions>
+    </mat-card>
+
+    <mat-card class="outer-card">
+      <mat-card-header>
+        <mat-card-title>Befunde</mat-card-title>
+      </mat-card-header>
+      <mat-card-content>
+      </mat-card-content>
+      <mat-card-actions>
+        <button mat-button>+ Befund hinzufügen</button>
+      </mat-card-actions>
+    </mat-card>
+  </div>
+</div>
+

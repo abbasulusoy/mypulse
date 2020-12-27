@@ -1,0 +1,11 @@
+.fill-remaining-space {
+  flex: 1 1 auto;
+}
+
+.nav-bar-small-text {
+  font-size: 14px;
+}
+
+.button-logout {
+  margin-left: 1em;
+}

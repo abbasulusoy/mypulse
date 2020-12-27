@@ -1,0 +1,50 @@
+<app-nav-bar></app-nav-bar>
+<div id="main-content">
+  <mat-card id="card-title" class="outer-card">
+    <mat-card-header>
+      <mat-card-title>Search results</mat-card-title>
+    </mat-card-header>
+
+  <mat-card-content>
+  <div>
+  <mat-form-field >
+    <input matInput type="text" (keyup)="doFilter($event.target.value)" placeholder="Filter">
+  </mat-form-field>
+</div>
+    <mat-table #table [dataSource]="dataSource">
+      <!-- E-Mail Column -->
+      <ng-container matColumnDef="email">
+        <mat-header-cell *matHeaderCellDef> E-Mail </mat-header-cell>
+        <mat-cell *matCellDef="let patient"> {{patient.telecom[0].value}} </mat-cell>
+      </ng-container>
+
+      <!-- Vorname Column -->
+      <ng-container matColumnDef="vname">
+        <mat-header-cell *matHeaderCellDef> Firstname </mat-header-cell>
+        <mat-cell *matCellDef="let patient"> {{patient.name[0].given[0]}} </mat-cell>
+      </ng-container>
+
+      <!-- Nachname Column -->
+      <ng-container matColumnDef="name">
+        <mat-header-cell *matHeaderCellDef> Lastname </mat-header-cell>
+        <mat-cell *matCellDef="let patient"> {{patient.name[0].family}} </mat-cell>
+      </ng-container>
+
+      <!-- Add Column -->
+      <ng-container matColumnDef="actions">
+        <mat-header-cell  *matHeaderCellDef > </mat-header-cell>
+        <mat-cell *matCellDef="let patient" >
+          <button mat-stroked-button color="primary" (click)="showDetails(patient.id)" routerLink="/patient">Show</button>
+          <!-- <button mat-stroked-button color="primary" *ngIf="!element.linked">Hinzufügen</button> -->
+        </mat-cell>
+      </ng-container>
+
+      <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+      <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+    </mat-table>
+
+    <mat-paginator  [pageSize]="3" [pageSizeOptions]="[5, 10, 20]" showFirstLastButtons></mat-paginator>
+  </mat-card-content>
+
+  </mat-card>
+</div>

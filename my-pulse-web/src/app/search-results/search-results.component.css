@@ -1,0 +1,25 @@
+#main-content {
+  margin: 6rem;
+}
+
+.outer-card {
+  width: 90%;
+  background: #00BFFF;
+  margin: 0.5rem;
+}
+
+.mat-card {
+  display: flex;
+  flex-direction: column;
+}
+
+.mat-card-header {
+  flex-shrink: 0;
+  padding: 0.5em;
+  color: white;
+}
+
+.mat-card-content {
+  flex-grow: 1;
+  overflow: auto;
+}

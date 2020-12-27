@@ -1,0 +1,33 @@
+<app-nav-bar></app-nav-bar>
+<div>
+  <mat-grid-list [cols]="2">
+    <mat-grid-tile>
+      <div>
+        <label id="radio-group-label" class="mat-card-title">PatientInnen-Suche</label>
+        <div class="form-field-group">
+          <mat-form-field appearance="outline">
+            <mat-label>firstName</mat-label>
+            <input matInput [(ngModel)]="searchParameters.given">
+          </mat-form-field>
+          <mat-form-field appearance="outline">
+            <mat-label>LastName</mat-label>
+            <input matInput [(ngModel)]="searchParameters.family">
+          </mat-form-field>
+          <!--<mat-form-field appearance="outline">
+            <mat-label>E-Mail</mat-label>
+            <input matInput>
+          </mat-form-field>-->
+        </div>
+        <button type="submit" mat-raised-button color="primary" (click)="searchPatients()">Search</button>
+      </div>
+    </mat-grid-tile>
+    <!--<mat-grid-tile>
+      <mat-card>
+        <mat-card-title>PatientIn noch nicht registriert?</mat-card-title>
+        <mat-card-content>
+          <a mat-button color="primary" routerLink="/edit">Neuen Patient / Neue Patientin anlegen</a>
+        </mat-card-content>
+      </mat-card>
+    </mat-grid-tile>-->
+  </mat-grid-list>
+</div>

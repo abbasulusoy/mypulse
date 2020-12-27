@@ -1,0 +1,21 @@
+<div mat-dialog-content>
+  <mat-form-field>
+    <mat-label>Allergen</mat-label>
+    <input matInput [(ngModel)]="data.text">
+  </mat-form-field>
+  <mat-form-field>
+    <mat-label>Symptom</mat-label>
+    <input matInput [(ngModel)]="data.manifestation">
+  </mat-form-field>
+  <mat-form-field>
+    <mat-label>Schwere</mat-label>
+    <mat-select [(value)]="data.severity">
+      <mat-option [value]="option" *ngFor="let option of data.severityScale">{{option}}</mat-option>
+    </mat-select>
+  </mat-form-field>
+</div>
+<div mat-dialog-actions>
+  <button mat-button (click)="onNoClick()">Abbrechen</button>
+  <button mat-button [mat-dialog-close]="data" cdkFocusInitial>Ok</button>
+</div>
+
